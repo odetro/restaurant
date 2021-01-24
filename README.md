@@ -2,11 +2,11 @@
 
 ## Front end built with:
 
-React
-JavaSctipt
-HTML / CSS / SCSS
+React \
+JavaSctipt \
+HTML / CSS / SCSS \
 
 ## Back end built with:
 
-NodeJS
-MongoDB (and Mongoos)
+NodeJS \
+MongoDB (and Mongoos) \
