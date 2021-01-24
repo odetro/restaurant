@@ -4,9 +4,9 @@
 
 React \
 JavaSctipt \
-HTML / CSS / SCSS \
+HTML / CSS / SCSS
 
 ## Back end built with:
 
 NodeJS \
-MongoDB (and Mongoos) \
+MongoDB (and Mongoos)
