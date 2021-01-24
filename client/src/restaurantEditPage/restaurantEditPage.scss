@@ -1,0 +1,32 @@
+@import '../restaurantPage/restaurantPage.scss';
+
+.submitBtn {
+    border: none;
+    border-radius: 30px 30px 30px 0px;
+    margin: 10px 0 20px 0;
+    background-color: #ed604c;
+    color: white;
+    padding: 10px 50px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    
+    &:focus {
+        outline: none;
+    }
+}
+
+.restaurant-page-container .restaurant-page-details-container .restaurant-page-details h3 input {
+    margin-right: 20px;
+    border: none;
+    padding: 7px;
+    border-bottom: 1px solid rgb(113, 113, 113);
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+
+    &:focus {
+        outline: none;
+    }
+}
