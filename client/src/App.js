@@ -46,9 +46,7 @@ function App() {
               <RestaurantPage />
           </Route>
           <Route path={`/`} >
-            <div className="App">
               <RestaurantsList />
-            </div>
           </Route>
         </Switch>
         <LoadingIndicator />

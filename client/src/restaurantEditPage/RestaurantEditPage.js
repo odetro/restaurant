@@ -50,7 +50,7 @@ export function RestaurantEditPage () {
         menuName = e.target.value;
     };
 
-    const capture = (e) => {
+    const submitChange = (e) => {
         let tempRestaurant = context.restaurant;
         if (menuName.length > 0) {
             tempRestaurant.menu.name = menuName;
@@ -60,10 +60,10 @@ export function RestaurantEditPage () {
 
     async function upadteMenu () {
         await trackPromise(updateRestMenu(context.restaurant, context.restaurant._id));
-        toast.error("🎉 menu's been updated", {
+        toast(`🎉 menu's been updated`, {
             position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
+            autoClose: 5000,
+            hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
@@ -81,7 +81,7 @@ export function RestaurantEditPage () {
                     <div className="restaurant-page-details-container">
                         <div className="restaurant-page-details">
                             <h1>Edit {context.restaurant.name}</h1>
-                            <h3><input type="text" onChange={handleChange} onBlur={capture} defaultValue={context.restaurant.menu.name} /></h3>
+                            <h3><input type="text" onChange={handleChange} onBlur={submitChange} defaultValue={context.restaurant.menu.name} /></h3>
                             <div className="menu">
                                 <div>
                                     { context.restaurant.menu.items.map( (item, index) => <MenuEditItem

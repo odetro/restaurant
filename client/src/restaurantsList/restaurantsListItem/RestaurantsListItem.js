@@ -15,7 +15,6 @@ export function RestaurantsListItem (props) {
                     <ul className="restaurant-item">
                         <li> { props.telephone } </li>
                         <li> { props.address } </li>
-                        <li> { props.menu.name } </li>
                     </ul>
                 </div>
             </NavLink>
