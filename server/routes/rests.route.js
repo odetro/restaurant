@@ -19,16 +19,27 @@ router.put("/:id", async (req, res) => {
     res.json(doc);
 });
 
-router.get("/:rest", async (req, res) => { 
+router.get("/restCount", async (req, res) => { 
     const docs = await restModel
-        .find({"name": req.params.rest})
+        .find({ menu: { $exists: true}})
+        .countDocuments({})
+        .exec();
+    res.json(docs);
+});
+router.get('/', async (req, res) => { 
+    let setLimit = parseInt(req.query.limit);
+    let skipCount = (parseInt(req.query.page) * setLimit) - setLimit;
+    const docs = await restModel
+        .find({ menu: { $exists: true}})
+        .skip(skipCount)
+        .limit(setLimit)
         .exec();
     res.json(docs);
 });
 
-router.get("/", async (req, res) => { 
+router.get("/:id", async (req, res) => { 
     const docs = await restModel
-        .find({ menu: { $exists: true}})
+        .find({"_id": req.params.id})
         .exec();
     res.json(docs);
 });

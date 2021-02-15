@@ -5,7 +5,7 @@ import './restaurantsListItem.scss'
 export function RestaurantsListItem (props) {
     return (
         <div className="restaurant-item-container">
-            <NavLink className="styled-navlink" to={`/${props.name}`} >
+            <NavLink className="styled-navlink" to={`/${props.name}-${props.id}`} >
                 <div className="image-container" style={{
                     backgroundImage: `url(${props.image})`
                     }}>

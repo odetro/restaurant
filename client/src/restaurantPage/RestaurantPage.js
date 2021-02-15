@@ -8,7 +8,8 @@ import { NavLink } from 'react-router-dom';
 import './restaurantPage.scss';
 
 async function getRestMenu(restName) {
-    const result = await fetch(`/api/rests/${restName}`);
+    let restId = restName.split("-").pop();
+    const result = await fetch(`/api/rests/${restId}`);
     return result.json();
 }
 

@@ -8,7 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import './restaurantEditPage.scss';
 
 async function getRestMenu(restName) {
-    const result = await fetch(`/api/rests/${restName}`);
+    let restId = restName.split("-").pop();
+    const result = await fetch(`/api/rests/${restId}`);
     return result.json();
 }
 
@@ -27,7 +28,7 @@ export function RestaurantEditPage () {
     const context = useContext(AppContext);
     const paramsURL = useParams();
 
-    const [ restName, setRestName ] = useState(paramsURL.rest);
+    const [ restName, setRestName ] = useState((paramsURL.rest));
     let menuName = "";
         
     useEffect(() => {
